@@ -88,7 +88,7 @@ Módulo (`src/bc_advanced_stats.py`) para análisis pre-modelado que guía la se
 
 ### 💻 Ejecución
 
-python src/bc_advanced_stats.py
+python3 src/bc_advanced_stats.py
 
 ## 📁 Output Generado
 
