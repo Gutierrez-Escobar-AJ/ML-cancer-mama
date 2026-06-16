@@ -36,7 +36,7 @@ El framework destaca por estar estructurado en componentes independientes y reut
 
 **Clonar el repositorio:**
 
-git clone [https://github.com/Gutierrez-Escobar-AJ/nombre-del-repo.git](https://github.com/Gutierrez-Escobar-AJ/nombre-del-repo.git)
+git clone [https://github.com/Gutierrez-Escobar-AJ/nombre-del-repo.git](https://github.com/Gutierrez-Escobar-AJ/ML-cancer-mama.git)
 cd nombre-del-repo
 
 **Crear y activar un entorno virtual (opcional pero recomendado):**
