@@ -98,7 +98,7 @@ ADVANCED_STATS/
 └── plots/           # Barras VIF/MI, PCA 2D/3D, anomalías, mapas de calor con clustering
 
 
-### Modelamiento:
+### 📊 Modelamiento:
 ### 1. Preprocesamiento Robusto
 - **Escalado**: `RobustScaler` (resistente a outliers)
 - **Selección**: Información Mutua para capturar relaciones no lineales
