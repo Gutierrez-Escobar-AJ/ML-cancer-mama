@@ -57,7 +57,48 @@ El sistema no se limita a evaluar la precisión global (Accuracy), sino que gene
 * Índice Kappa de Cohen: Para medir la concordancia de las predicciones corrigiendo el efecto del azar.
 
 ## 🔬 Metodología
+### 📊 Análisis Exploratorio de Datos (EDA)
 
+El repositorio incluye un EDA profesional (`src/bc_EDA_v3.py`) que realiza:
+
+- Análisis por columna con estadísticas paramétricas y no paramétricas
+- Detección de outliers (IQR y Z-score)
+- Pruebas de normalidad (Shapiro-Wilk / D'Agostino)
+- Correlaciones: Pearson, Spearman y Kendall
+- Comparación por grupos: t-test y Mann-Whitney U
+- **Statistical Advisor**: recomienda automáticamente el mejor método según los datos
+- Análisis categórico: Chi-cuadrado, V de Cramér, entropía y cardinalidad
+
+python3 src/bc_EDA_v3.py
+
+### 🔬 Análisis Estadístico Avanzado
+
+Módulo (`src/bc_advanced_stats.py`) para análisis pre-modelado que guía la selección de features y modelos.
+
+### 📊 Análisis Incluidos
+
+| Análisis | Método | Hallazgo Clave | Recomendación |
+|----------|--------|----------------|---------------|
+| **Multicolinealidad** | VIF | `radius_mean`, `perimeter_mean`, `area_mean` con VIF > 10 | Eliminar redundantes o usar PCA |
+| **Relaciones no lineales** | Información Mutua | `perimeter_worst`, `area_worst`, `radius_worst` más predictivos | Priorizar en modelos de árbol |
+| **Homogeneidad de varianzas** | Levene | Múltiples features con varianzas desiguales entre clases | Usar QDA o modelos no paramétricos |
+| **Separabilidad** | PCA Robusto | 3 PCs explican ~96.7% de varianza | Reducir dimensionalidad a 3 PCs |
+| **Puntos influyentes** | Isolation Forest | ~5% de muestras son anomalías | Evaluar impacto o usar modelos robustos |
+| **Agrupación de features** | Spearman + Clustering | 3 clusters: tamaño, forma, textura | Seleccionar 1 variable por cluster |
+
+### 💻 Ejecución
+
+python src/bc_advanced_stats.py
+
+## 📁 Output Generado
+
+ADVANCED_STATS/
+├── csv/             # VIF, MI, Levene, PCA loadings, puntos influyentes, correlaciones
+├── logs/            # Bitácora completa
+└── plots/           # Barras VIF/MI, PCA 2D/3D, anomalías, mapas de calor con clustering
+
+
+### Modelamiento:
 ### 1. Preprocesamiento Robusto
 - **Escalado**: `RobustScaler` (resistente a outliers)
 - **Selección**: Información Mutua para capturar relaciones no lineales
