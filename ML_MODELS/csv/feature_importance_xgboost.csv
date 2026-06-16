@@ -1,0 +1,16 @@
+feature,importance
+radius_worst,0.26249486
+concave points_mean,0.21374036
+perimeter_worst,0.21027115
+concave points_worst,0.078575484
+area_worst,0.07165194
+area_mean,0.039424036
+compactness_worst,0.024467178
+concavity_worst,0.022961298
+compactness_mean,0.013747789
+area_se,0.012605672
+concavity_mean,0.012595052
+radius_se,0.011509783
+radius_mean,0.00990607
+perimeter_mean,0.009323307
+perimeter_se,0.0067260326

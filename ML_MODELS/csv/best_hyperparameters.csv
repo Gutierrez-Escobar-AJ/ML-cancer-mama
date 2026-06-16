@@ -1,0 +1,11 @@
+model,parameter,value
+random_forest,class_weight,balanced
+random_forest,max_depth,10
+random_forest,min_samples_leaf,1
+random_forest,min_samples_split,2
+random_forest,n_estimators,100
+xgboost,colsample_bytree,0.8
+xgboost,learning_rate,0.01
+xgboost,max_depth,3
+xgboost,n_estimators,100
+xgboost,subsample,0.8
