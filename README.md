@@ -22,16 +22,6 @@ El framework destaca por estar estructurado en componentes independientes y reut
 * **Diagnóstico de Sesgo-Varianza:** Implementación automatizada de **Curvas de Aprendizaje (`learning_curve`)** para monitorear visualmente la convergencia de los modelos y el comportamiento del error.
 * **Validación Estadística Exigente (Test de McNemar):** Implementación de una prueba no paramétrica sobre las predicciones discordantes de los modelos. Esto permite certificar con base en un *p-valor* si la superioridad de un algoritmo es estadísticamente significativa y no fruto del azar.
 
-## 📁 Estructura del Repositorio
-
-├── src/
-│   └── bc_ml_pred.py       # Pipeline principal estructurado en clases
-├── data/
-│   └── breast-cancer.csv   # Dataset de diagnóstico (características celulares)
-├── requirements.txt        # Dependencias del entorno virtual
-├── .gitignore              # Exclusiones de archivos temporales de Python
-└── README.md               # Documentación del proyecto
-
 ## 🛠️ Requisitos e Instalación
 
 **Clonar el repositorio:**
