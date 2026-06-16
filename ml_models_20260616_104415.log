@@ -1,0 +1,197 @@
+2026-06-16 10:44:15,938 | __main__ | INFO | ============================================================
+2026-06-16 10:44:15,938 | __main__ | INFO | GridSearchCV ENABLED - Hyperparameter optimization active
+2026-06-16 10:44:15,938 | __main__ | INFO |   Inner CV folds: 3
+2026-06-16 10:44:15,938 | __main__ | INFO | ============================================================
+2026-06-16 10:44:15,938 | __main__ | INFO | ================================================================================
+2026-06-16 10:44:15,938 | __main__ | INFO | PREDICTIVE MODELING: Random Forest vs XGBoost
+2026-06-16 10:44:15,938 | __main__ | INFO | WITH GRID SEARCH OPTIMIZATION
+2026-06-16 10:44:15,938 | __main__ | INFO | ================================================================================
+2026-06-16 10:44:15,938 | __main__ | INFO | ================================================================================
+2026-06-16 10:44:15,938 | __main__ | INFO | DATA LOADING & PREPROCESSING
+2026-06-16 10:44:15,938 | __main__ | INFO | ================================================================================
+2026-06-16 10:44:15,943 | __main__ | INFO | Loaded breast-cancer.csv
+2026-06-16 10:44:15,943 | __main__ | INFO | Shape: (569, 32)
+2026-06-16 10:44:15,946 | __main__ | INFO | Removed 'id' column (unique identifier)
+2026-06-16 10:44:15,946 | __main__ | INFO | Features: 30
+2026-06-16 10:44:15,947 | __main__ | INFO | Target distribution: {0: 357, 1: 212}
+2026-06-16 10:44:15,948 | __main__ | INFO | Class imbalance ratio: 1.68:1
+2026-06-16 10:44:15,948 | __main__ | WARNING | Moderate to severe imbalance detected. Using class weights.
+2026-06-16 10:44:15,948 | __main__ | INFO | Selecting top 15 features using Mutual Information...
+2026-06-16 10:44:16,003 | __main__ | INFO | Selected 15 features:
+2026-06-16 10:44:16,003 | __main__ | INFO |   1. perimeter_worst (MI: 0.4718)
+2026-06-16 10:44:16,003 | __main__ | INFO |   2. area_worst (MI: 0.4643)
+2026-06-16 10:44:16,003 | __main__ | INFO |   3. radius_worst (MI: 0.4512)
+2026-06-16 10:44:16,003 | __main__ | INFO |   4. concave points_mean (MI: 0.4388)
+2026-06-16 10:44:16,003 | __main__ | INFO |   5. concave points_worst (MI: 0.4363)
+2026-06-16 10:44:16,003 | __main__ | INFO |   6. perimeter_mean (MI: 0.4024)
+2026-06-16 10:44:16,003 | __main__ | INFO |   7. concavity_mean (MI: 0.3754)
+2026-06-16 10:44:16,003 | __main__ | INFO |   8. radius_mean (MI: 0.3623)
+2026-06-16 10:44:16,003 | __main__ | INFO |   9. area_mean (MI: 0.3600)
+2026-06-16 10:44:16,003 | __main__ | INFO |   10. area_se (MI: 0.3408)
+2026-06-16 10:44:16,003 | __main__ | INFO |   ... and 5 more
+2026-06-16 10:44:16,003 | __main__ | INFO | Scaling features with ROBUST scaler...
+2026-06-16 10:44:16,006 | __main__ | INFO | Feature scaling completed
+2026-06-16 10:44:16,006 | __main__ | INFO | Splitting data into train (80%) and test (20%) sets...
+2026-06-16 10:44:16,008 | __main__ | INFO | Train set: 455 samples
+2026-06-16 10:44:16,008 | __main__ | INFO | Test set: 114 samples
+2026-06-16 10:44:16,008 | __main__ | INFO | Train set size: 455 samples
+2026-06-16 10:44:16,008 | __main__ | INFO | Test set size: 114 samples
+2026-06-16 10:44:16,008 | __main__ | INFO | ----------------------------------------
+2026-06-16 10:44:16,008 | __main__ | INFO | Training Random Forest...
+2026-06-16 10:44:16,008 | __main__ | INFO | ----------------------------------------
+2026-06-16 10:44:16,008 | __main__ | INFO | Random Forest - GridSearchCV Optimization
+2026-06-16 10:44:16,008 | __main__ | INFO | Parameter grid: 216 combinations
+2026-06-16 10:44:16,008 | __main__ | INFO |   n_estimators: [100, 200, 300]
+2026-06-16 10:44:16,008 | __main__ | INFO |   max_depth: [10, 20, 30, None]
+2026-06-16 10:44:16,008 | __main__ | INFO |   min_samples_split: [2, 5, 10]
+2026-06-16 10:44:16,008 | __main__ | INFO |   min_samples_leaf: [1, 2, 4]
+2026-06-16 10:44:16,008 | __main__ | INFO |   class_weight: ['balanced', 'balanced_subsample']
+2026-06-16 10:44:16,008 | __main__ | INFO | Running GridSearchCV (this may take a few minutes)...
+2026-06-16 10:44:42,124 | __main__ | INFO | Best parameters found: {'class_weight': 'balanced', 'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2026-06-16 10:44:42,124 | __main__ | INFO | Best CV score: 0.9883
+2026-06-16 10:44:42,289 | __main__ | INFO | Fitted best model on full training data
+2026-06-16 10:44:42,289 | __main__ | INFO | Random Forest configured with:
+2026-06-16 10:44:42,289 | __main__ | INFO |   class_weight: balanced
+2026-06-16 10:44:42,289 | __main__ | INFO |   max_depth: 10
+2026-06-16 10:44:42,289 | __main__ | INFO |   min_samples_leaf: 1
+2026-06-16 10:44:42,289 | __main__ | INFO |   min_samples_split: 2
+2026-06-16 10:44:42,290 | __main__ | INFO |   n_estimators: 100
+2026-06-16 10:44:42,290 | __main__ | INFO | Cross-validating Random Forest with 5 folds...
+2026-06-16 10:44:44,153 | __main__ | INFO | Random Forest CV results:
+2026-06-16 10:44:44,153 | __main__ | INFO |   accuracy: 0.9495
+2026-06-16 10:44:44,154 | __main__ | INFO |   precision: 0.9455
+2026-06-16 10:44:44,154 | __main__ | INFO |   recall: 0.9176
+2026-06-16 10:44:44,154 | __main__ | INFO |   f1_score: 0.9313
+2026-06-16 10:44:44,154 | __main__ | INFO |   roc_auc: 0.9847
+2026-06-16 10:44:44,154 | __main__ | INFO |   mcc: 0.8916
+2026-06-16 10:44:44,154 | __main__ | INFO |   kappa: 0.8914
+2026-06-16 10:44:44,154 | __main__ | INFO | Evaluating Random Forest on test set...
+2026-06-16 10:44:44,196 | __main__ | INFO | Random Forest test results:
+2026-06-16 10:44:44,197 | __main__ | INFO |   accuracy: 0.9649
+2026-06-16 10:44:44,197 | __main__ | INFO |   precision: 1.0000
+2026-06-16 10:44:44,197 | __main__ | INFO |   recall: 0.9048
+2026-06-16 10:44:44,197 | __main__ | INFO |   f1_score: 0.9500
+2026-06-16 10:44:44,197 | __main__ | INFO |   roc_auc: 0.9952
+2026-06-16 10:44:44,197 | __main__ | INFO |   mcc: 0.9258
+2026-06-16 10:44:44,197 | __main__ | INFO |   kappa: 0.9231
+2026-06-16 10:44:44,197 | __main__ | INFO | ----------------------------------------
+2026-06-16 10:44:44,197 | __main__ | INFO | Training XGBoost...
+2026-06-16 10:44:44,198 | __main__ | INFO | ----------------------------------------
+2026-06-16 10:44:44,198 | __main__ | INFO | XGBoost - GridSearchCV Optimization
+2026-06-16 10:44:44,198 | __main__ | INFO | Parameter grid: 243 combinations
+2026-06-16 10:44:44,198 | __main__ | INFO | Fixed parameter: scale_pos_weight = 1.68
+2026-06-16 10:44:44,198 | __main__ | INFO |   n_estimators: [100, 200, 300]
+2026-06-16 10:44:44,198 | __main__ | INFO |   max_depth: [3, 6, 10]
+2026-06-16 10:44:44,198 | __main__ | INFO |   learning_rate: [0.01, 0.05, 0.1]
+2026-06-16 10:44:44,198 | __main__ | INFO |   subsample: [0.8, 0.9, 1.0]
+2026-06-16 10:44:44,198 | __main__ | INFO |   colsample_bytree: [0.8, 0.9, 1.0]
+2026-06-16 10:44:44,198 | __main__ | INFO | Running GridSearchCV (this may take a few minutes)...
+2026-06-16 10:44:50,476 | __main__ | INFO | Best parameters found: {'colsample_bytree': 0.8, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.8}
+2026-06-16 10:44:50,476 | __main__ | INFO | Best CV score: nan
+2026-06-16 10:44:50,517 | __main__ | INFO | Fitted best model on full training data
+2026-06-16 10:44:50,518 | __main__ | INFO | XGBoost configured with:
+2026-06-16 10:44:50,518 | __main__ | INFO |   colsample_bytree: 0.8
+2026-06-16 10:44:50,518 | __main__ | INFO |   learning_rate: 0.01
+2026-06-16 10:44:50,518 | __main__ | INFO |   max_depth: 3
+2026-06-16 10:44:50,518 | __main__ | INFO |   n_estimators: 100
+2026-06-16 10:44:50,518 | __main__ | INFO |   subsample: 0.8
+2026-06-16 10:44:50,518 | __main__ | INFO | Cross-validating XGBoost with 5 folds...
+2026-06-16 10:44:50,937 | __main__ | INFO | XGBoost CV results:
+2026-06-16 10:44:50,937 | __main__ | INFO |   accuracy: 0.9495
+2026-06-16 10:44:50,937 | __main__ | INFO |   precision: 0.9298
+2026-06-16 10:44:50,937 | __main__ | INFO |   recall: 0.9353
+2026-06-16 10:44:50,937 | __main__ | INFO |   f1_score: 0.9326
+2026-06-16 10:44:50,937 | __main__ | INFO |   roc_auc: 0.9818
+2026-06-16 10:44:50,937 | __main__ | INFO |   mcc: 0.8921
+2026-06-16 10:44:50,937 | __main__ | INFO |   kappa: 0.8921
+2026-06-16 10:44:50,937 | __main__ | INFO | Evaluating XGBoost on test set...
+2026-06-16 10:44:50,945 | __main__ | INFO | XGBoost test results:
+2026-06-16 10:44:50,945 | __main__ | INFO |   accuracy: 0.9561
+2026-06-16 10:44:50,945 | __main__ | INFO |   precision: 0.9744
+2026-06-16 10:44:50,945 | __main__ | INFO |   recall: 0.9048
+2026-06-16 10:44:50,945 | __main__ | INFO |   f1_score: 0.9383
+2026-06-16 10:44:50,945 | __main__ | INFO |   roc_auc: 0.9950
+2026-06-16 10:44:50,945 | __main__ | INFO |   mcc: 0.9058
+2026-06-16 10:44:50,946 | __main__ | INFO |   kappa: 0.9043
+2026-06-16 10:44:50,953 | __main__ | INFO | Saved best hyperparameters: ML_MODELS/csv/best_hyperparameters.csv
+2026-06-16 10:44:50,953 | __main__ | INFO | ----------------------------------------
+2026-06-16 10:44:50,953 | __main__ | INFO | BEST HYPERPARAMETERS FOUND
+2026-06-16 10:44:50,953 | __main__ | INFO | ----------------------------------------
+2026-06-16 10:44:50,953 | __main__ | INFO | random_forest:
+2026-06-16 10:44:50,954 | __main__ | INFO |   class_weight: balanced
+2026-06-16 10:44:50,954 | __main__ | INFO |   max_depth: 10
+2026-06-16 10:44:50,954 | __main__ | INFO |   min_samples_leaf: 1
+2026-06-16 10:44:50,954 | __main__ | INFO |   min_samples_split: 2
+2026-06-16 10:44:50,954 | __main__ | INFO |   n_estimators: 100
+2026-06-16 10:44:50,954 | __main__ | INFO | xgboost:
+2026-06-16 10:44:50,954 | __main__ | INFO |   colsample_bytree: 0.8
+2026-06-16 10:44:50,954 | __main__ | INFO |   learning_rate: 0.01
+2026-06-16 10:44:50,954 | __main__ | INFO |   max_depth: 3
+2026-06-16 10:44:50,954 | __main__ | INFO |   n_estimators: 100
+2026-06-16 10:44:50,954 | __main__ | INFO |   subsample: 0.8
+2026-06-16 10:44:51,222 | __main__ | INFO | Saved ROC curves: ML_MODELS/plots/roc_curves_comparison.png
+2026-06-16 10:44:51,454 | __main__ | INFO | Saved confusion matrices: ML_MODELS/plots/confusion_matrices.png
+2026-06-16 10:44:51,464 | __main__ | INFO | Saved classification reports: ML_MODELS/csv/classification_reports.csv
+2026-06-16 10:44:51,572 | __main__ | INFO | Saved ROC curves: ML_MODELS/plots/roc_curves_comparison_test.png
+2026-06-16 10:44:51,871 | __main__ | INFO | Saved confusion matrices: ML_MODELS/plots/confusion_matrices_test.png
+2026-06-16 10:44:51,881 | __main__ | INFO | Saved classification reports: ML_MODELS/csv/classification_reports_test.csv
+2026-06-16 10:44:51,910 | __main__ | INFO | Extracted feature importance for random_forest
+2026-06-16 10:44:51,910 | __main__ | INFO |   Top 5 features for random_forest:
+2026-06-16 10:44:51,911 | __main__ | INFO |     concave points_mean: 0.1443
+2026-06-16 10:44:51,911 | __main__ | INFO |     perimeter_worst: 0.1406
+2026-06-16 10:44:51,911 | __main__ | INFO |     area_worst: 0.1316
+2026-06-16 10:44:51,911 | __main__ | INFO |     radius_worst: 0.1104
+2026-06-16 10:44:51,911 | __main__ | INFO |     concave points_worst: 0.1037
+2026-06-16 10:44:51,912 | __main__ | INFO | Extracted feature importance for xgboost
+2026-06-16 10:44:51,913 | __main__ | INFO |   Top 5 features for xgboost:
+2026-06-16 10:44:51,913 | __main__ | INFO |     radius_worst: 0.2625
+2026-06-16 10:44:51,913 | __main__ | INFO |     concave points_mean: 0.2137
+2026-06-16 10:44:51,913 | __main__ | INFO |     perimeter_worst: 0.2103
+2026-06-16 10:44:51,913 | __main__ | INFO |     concave points_worst: 0.0786
+2026-06-16 10:44:51,913 | __main__ | INFO |     area_worst: 0.0717
+2026-06-16 10:44:52,200 | __main__ | INFO | Saved feature importance comparison: ML_MODELS/plots/feature_importance_comparison.png
+2026-06-16 10:44:52,201 | __main__ | INFO | Saved feature importance for random_forest: ML_MODELS/csv/feature_importance_random_forest.csv
+2026-06-16 10:44:52,201 | __main__ | INFO | Saved feature importance for xgboost: ML_MODELS/csv/feature_importance_xgboost.csv
+2026-06-16 10:44:52,202 | __main__ | INFO | Model comparison (cv):
+2026-06-16 10:44:52,202 | __main__ | INFO |   accuracy: 0.9495 vs 0.9495 → tie better
+2026-06-16 10:44:52,202 | __main__ | INFO |   precision: 0.9455 vs 0.9298 → Random Forest better
+2026-06-16 10:44:52,202 | __main__ | INFO |   recall: 0.9176 vs 0.9353 → XGBoost better
+2026-06-16 10:44:52,202 | __main__ | INFO |   f1_score: 0.9313 vs 0.9326 → XGBoost better
+2026-06-16 10:44:52,203 | __main__ | INFO |   roc_auc: 0.9847 vs 0.9818 → Random Forest better
+2026-06-16 10:44:52,203 | __main__ | INFO |   mcc: 0.8916 vs 0.8921 → XGBoost better
+2026-06-16 10:44:52,203 | __main__ | INFO |   kappa: 0.8914 vs 0.8921 → XGBoost better
+2026-06-16 10:44:52,203 | __main__ | INFO | Model comparison (test):
+2026-06-16 10:44:52,204 | __main__ | INFO |   accuracy: 0.9649 vs 0.9561 → Random Forest better
+2026-06-16 10:44:52,204 | __main__ | INFO |   precision: 1.0000 vs 0.9744 → Random Forest better
+2026-06-16 10:44:52,204 | __main__ | INFO |   recall: 0.9048 vs 0.9048 → tie better
+2026-06-16 10:44:52,204 | __main__ | INFO |   f1_score: 0.9500 vs 0.9383 → Random Forest better
+2026-06-16 10:44:52,204 | __main__ | INFO |   roc_auc: 0.9952 vs 0.9950 → Random Forest better
+2026-06-16 10:44:52,204 | __main__ | INFO |   mcc: 0.9258 vs 0.9058 → Random Forest better
+2026-06-16 10:44:52,204 | __main__ | INFO |   kappa: 0.9231 vs 0.9043 → Random Forest better
+2026-06-16 10:44:52,205 | __main__ | INFO | McNemar test (cv): χ² = 0.1667, p = 0.6831
+2026-06-16 10:44:52,205 | __main__ | INFO |   No significant difference
+2026-06-16 10:44:52,206 | __main__ | INFO | McNemar test (test): χ² = 0.0000, p = 1.0000
+2026-06-16 10:44:52,206 | __main__ | INFO |   No significant difference
+2026-06-16 10:44:52,207 | __main__ | INFO | Generating learning curves for random_forest...
+2026-06-16 10:44:53,431 | __main__ | INFO | Saved learning curves: ML_MODELS/plots/learning_curves_random_forest.png
+2026-06-16 10:44:53,431 | __main__ | INFO | Generating learning curves for xgboost...
+2026-06-16 10:44:53,786 | __main__ | INFO | Saved learning curves: ML_MODELS/plots/learning_curves_xgboost.png
+2026-06-16 10:44:53,786 | __main__ | INFO | ================================================================================
+2026-06-16 10:44:53,786 | __main__ | INFO | FINAL RECOMMENDATION
+2026-06-16 10:44:53,786 | __main__ | INFO | ================================================================================
+2026-06-16 10:44:53,786 | __main__ | INFO | Best performing model on TEST SET: Random Forest (ROC-AUC = 0.9952)
+2026-06-16 10:44:53,786 | __main__ | INFO | Both models perform similarly on test data
+2026-06-16 10:44:53,786 | __main__ | INFO |   → Consider ensemble or simpler model for deployment
+2026-06-16 10:44:53,786 | __main__ | INFO | 
+2026-06-16 10:44:53,786 | __main__ | INFO | Next steps:
+2026-06-16 10:44:53,786 | __main__ | INFO |   1. Fine-tune hyperparameters further with more iterations
+2026-06-16 10:44:53,786 | __main__ | INFO |   2. Test on external validation dataset
+2026-06-16 10:44:53,786 | __main__ | INFO |   3. Consider ensemble of both models (stacking)
+2026-06-16 10:44:53,786 | __main__ | INFO |   4. Deploy with probability calibration if needed
+2026-06-16 10:44:53,786 | __main__ | INFO |   5. Try RandomizedSearchCV for larger parameter spaces
+2026-06-16 10:44:53,786 | __main__ | INFO | ================================================================================
+2026-06-16 10:44:53,786 | __main__ | INFO | PREDICTIVE MODELING COMPLETED
+2026-06-16 10:44:53,786 | __main__ | INFO | Results saved in: ML_MODELS/
+2026-06-16 10:44:53,786 | __main__ | INFO |   - CSV files: ML_MODELS/csv
+2026-06-16 10:44:53,786 | __main__ | INFO |   - Plots: ML_MODELS/plots
+2026-06-16 10:44:53,786 | __main__ | INFO | ================================================================================
