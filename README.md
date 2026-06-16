@@ -28,7 +28,7 @@ El framework destaca por estar estructurado en componentes independientes y reut
 
 git clone https://github.com/Gutierrez-Escobar-AJ/ML-cancer-mama.git
 
-cd nombre-del-repo
+cd ML-cancer-mama
 
 **Crear y activar un entorno virtual (opcional pero recomendado):**
 
